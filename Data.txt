@@ -1,1 +1,32 @@
+1/2/2002 -20000 Buy Phone
+1/2/2002 +24000 Salary
+2/2/2002 +2000 Deposit
+3/2/2002 -1000 Weekly outcome
+4/2/2002 -2000 Cloth
+5/2/2002 -5000 Rental fee
+6/2/2002 -50 Coffee
+7/2/2002 -200 Netflix subscription
+8/2/2002 -70 Youtube Premium
+9/2/2002 -50 Coffee
+10/2/2002 -50 Coffee
+11/2/2002 -1000 Weekly outcome
+11/2/2002 -200 Buffet
+12/2/2002 -200 Movie ticket
+13/2/2002 -50 Coffee
+14/2/2002 -50 Coffee
+15/2/2002 -50 Coffee
+16/2/2002 -50 Coffee
+17/2/2002 -50 Coffee
+18/2/2002 -1000 Weekly outcome
+19/2/2002 -2000 Online shopping
+20/2/2002 -2000 Super market
+21/2/2002 -2000 Gas
+22/2/2002 -200 Ice-cream
+23/2/2002 -20000 money
+24/2/2002 -20000 money
+25/2/2002 -1000 Weekly outcome
+26/2/2002 -20000 money
+27/2/2002 -20000 money
+29/2/2002 -20000 money
+
 
