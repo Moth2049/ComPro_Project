@@ -1,36 +1,23 @@
 import pandas as pd
-account = {'จำนวนเงินในบัญชีผู้ใช้':0}
 
-date=input('วันที่ต้องการค้นหา:')
-describ=input('ใส่ข้อความที่ต้องการอธิบาย:')
+def Display():
+    
+    date=input('วันที่ต้องการค้นหา:')
+    file = ("Data.txt","a+")
+    with open(file) as f :
+        line = f.readline()
+        cnt = 1
+        while line:
 
-def accountbalance():
-    print ('ยอดเงินคงเหลือในบัญชี:',account)
+        a = 200
+        b = 100
+        describe = "k"
+    colsname = {
+        'Date' : [date],
+        'Description' : [describe],
+        'Income' : [a],
+        'Expense' : [b],
+        'total' : [a-b]
 
-def deposit(money):
-    print ('ฝากเงินเข้าบัญชีผู้ใช้:',money)
-    account['จำนวนเงินในบัญชีผู้ใช้']+=money
-def expense(money):
-    print ('ถอนเงินออกจากบัญชีผู้ใช้:',money)
-    account['จำนวนเงินในบัญชีผู้ใช้']-=money
-
-accountbalance()
-deposit(300)
-expense(100)
-accountbalance()
-#['Date','Description','Income','Expense','total']
-''' 'Date' : print(date),
-    'Description' : print(describ),
-    'Income' : print(deposit()),
-    'Expense' : print(expense()),
-    'total' : print(accountbalance()) '''
-
-colsname = {
-    'Date' : [date],
-    'Description' : [describ],
-    'Income' : [deposit],
-    'Expense' : [expense],
-    'total' : [accountbalance]
-
-}
-print(pd.DataFrame(colsname))
+    }
+    print(pd.DataFrame(colsname))
