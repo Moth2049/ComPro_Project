@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import re
+from Cal import Cal
 
 def Display():
     date=input('วันที่ที่ต้องการค้นหา:')
@@ -23,13 +24,14 @@ def Display():
         StrSentense = str(SentenseCount)
         Date = StrSentense.split(" ")[0]
         if date == Date :
+            C = count
             Datelist.append(Date)
             Money_DT = StrSentense.partition(" ")[2]
             Money = Money_DT.partition(" ")[0] 
             DT = Money_DT.partition(" ")[2] #Description
             DTlist.append(DT)
-            print(Money_DT)
-            print(DT)
+            #print(Money_DT)
+            #print(DT)
             if "+" in Money:
                 CashPl = Money.partition("+")[2]
                 CashP.append(CashPl)
@@ -41,7 +43,7 @@ def Display():
                 CashM.append(CashMi)
                 CashPl = 0
                 CashP.append(CashPl)
-            total = "-"
+            total = Cal(count+1)
             Total.append(total)    
         count += 1
     colsname = {
@@ -52,7 +54,7 @@ def Display():
         'total' : Total
         }
     print(pd.DataFrame(colsname))
-
-
+    print(C)
+    
 while True :
     Display()
