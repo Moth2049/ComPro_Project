@@ -7,31 +7,27 @@ def Display():
     date=input('วันที่ที่ต้องการค้นหา:')
     file = open("Data.txt","r")
     count = 0
-    line = 0
+    #count line
     x = file.readlines()
     b = len(x)
+    #create list
     CashM = []
     CashP = []
     Datelist = []
     DTlist = []
     Total =[]
-    #print(x[count])
-    #print(x[b-1])
     for i in range(1,b+1):
         file = open("Data.txt","r")
         Sentense = file.read().splitlines()
-        SentenseCount = Sentense[count]
-        StrSentense = str(SentenseCount)
-        Date = StrSentense.split(" ")[0]
+        SentenseCount = Sentense[count] #read line [x]
+        StrSentense = str(SentenseCount) #make it to string
+        Date = StrSentense.split(" ")[0] # Extract Date
         if date == Date :
-            C = count
             Datelist.append(Date)
-            Money_DT = StrSentense.partition(" ")[2]
-            Money = Money_DT.partition(" ")[0] 
+            Money_DT = StrSentense.partition(" ")[2] #Money and Description
+            Money = Money_DT.partition(" ")[0] #Money
             DT = Money_DT.partition(" ")[2] #Description
             DTlist.append(DT)
-            #print(Money_DT)
-            #print(DT)
             if "+" in Money:
                 CashPl = Money.partition("+")[2]
                 CashP.append(CashPl)
@@ -44,17 +40,23 @@ def Display():
                 CashPl = 0
                 CashP.append(CashPl)
             total = Cal(count+1)
-            Total.append(total)    
-        count += 1
-    colsname = {
-        'Date' : Datelist,
-        'Description' : DTlist,
-        'Income' : CashP,
-        'Expense' : CashM,
-        'total' : Total
-        }
-    print(pd.DataFrame(colsname))
-    print(C)
+            Total.append(total)  
     
+        count += 1
+    if date in Datelist : 
+        #create colums
+        colsname = {
+            'Date' : Datelist,
+            'Description' : DTlist,
+            'Income' : CashP,
+            'Expense' : CashM,
+            'total' : Total
+            }
+        print(pd.DataFrame(colsname))
+    if date not in Datelist :
+        print("Sorry, This date doesn't exist") 
+    
+
+# To test   
 while True :
     Display()
