@@ -1,7 +1,9 @@
 #Menu Function
 from Enter_item import EI #Function1
+from Display import Display
+a = q
 
-while True :
+while a == 1 :
     print("1. Enter item")
     print("2. Display")
     print("3. Save")
