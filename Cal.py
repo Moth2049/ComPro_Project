@@ -1,13 +1,8 @@
 def Cal(k):
     file = open("Data.txt","r")
     count = 0
-    line = 0
-    x = file.readlines()
-    b = len(x)
-    z=0
-    y=0
-    c=0
-    d=0
+    A=0
+    B=0
     total = 0
     for i in range(1,k+1):
         file = open("Data.txt","r")
@@ -15,21 +10,19 @@ def Cal(k):
         Sentense = file.readlines()
         SentenseCount = Sentense[count]
         StrSentense = str(SentenseCount)
-        Date = StrSentense.split(" ")[0]
-        Money_DT = StrSentense.partition(" ")[2]
-        Money = Money_DT.partition(" ")[0] 
+        Money_DT = StrSentense.partition(" ")[2] #Money and Description
+        Money = Money_DT.partition(" ")[0] #Money
         if "+" in Money:
             CashPl = Money.partition("+")[2]
-            z = int(CashPl)
-            c=c+z
+            CashP = int(CashPl)
+            A=A+CashP
         elif "-" in Money:
             CashMi = Money.partition("-")[2]
-            y = int(CashMi)
-            d=d-y
+            CashM = int(CashMi)
+            B=B-CashM
       
         count += 1
-    total = total+c+d 
-    print(total)
+    total = total+A+B 
     return total
 
     
